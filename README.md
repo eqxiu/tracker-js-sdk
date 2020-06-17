@@ -7,11 +7,9 @@
 > 2. c_p只有如下取值PC, iOS, Android
 
 ### 二.名词解释
-1. 作品打点：又称为站外打点。H5等可分享出去的作品。例如 https://u.eqxiu.com/s/eRne4P1C 页面就是作品页面。
-2. 产品打点：又称为站内打点。除作品打点都是产品打点。
-3. 自动打点：接入大数据打点SDK
-4. 主动打点：调用大数据打点SDK(PC和WAP)的report接口或移动端(iOS, Android和小程序)上报日志。
-5. 嵌入式埋点：WEB数据在元素上添加一些标识，大数据打点SDK会采集到这些标识，上报相关元素的日志数据。
+1. 普通埋点：引入sdk后，基础页面数据会自动采集。
+4. 主动打点：调用大数据打点SDK(PC和WAP)的report接口或。
+5. 嵌入式埋点：WEB数据在元素上添加一些标识，数据采集SDK会采集到这些标识，上报相关元素的日志数据。
 
 ### 三. 数据上报方式比较
 
@@ -25,10 +23,7 @@
 ### 四. JS SDK接入
 环境| 数据类型 | 引入文件 
 ---| --- | --- 
-测试环境| 作品 | <script type="text/javascript" src="//datalog.sample.cn/tracker-view.js" async></script>
-测试环境| 产品 | <script type="text/javascript" src="//datalog.sample.cn/tracker.js" async></script>
-正式环境| 作品 | <script type="text/javascript" src="//datalog.sample.com/tracker-view.js" async></script>
-正式环境| 产品 | <script type="text/javascript" src="//datalog.sample.com/tracker.js" async></script>
+正式环境| 官网 | <script type="text/javascript" src="//datalog.sample.con/tracker.js" async></script>
 
 ### 五. 代码集成
 a. 产品打点，使用tracker.js文件
@@ -53,11 +48,11 @@ window._tracker_.push(['unm', '']); //页面名字
 ![image.png](https://wt-box.worktile.com/public/c4301e1f-1916-41d5-9fcd-d7b075270c11)
 然后加上`rdt`,`cat`,`act`三个字段，格式如下：
 ```
-<li class="members" _tracker_click_="_tracker_click_" rdt="3" cat="pc_print" act="编辑器_升级"><i class="eqf-vipdiamond-f"></i>&nbsp;升级 </li>
+<li class="members" _tracker_click_="_tracker_click_" rdt="3" cat="button" act="编辑器_升级"><i class="eqf-vipdiamond-f"></i>&nbsp;升级 </li>
 ```
 rdt的取值只有字符串"3".
-cat为事件的分类，由2部分构成，”平台_产品名”,比如”pc_print”为PC上的轻设计编辑器。其中平台取值只有pc和wap。在查看报表，根据分类过滤的时候会用到。
-act为事件名，由2部分构成，"页面名_组件名",比如"编辑器_升级"为编辑器页面的升级按钮。在查看报表，根据事件过滤的时候会用到。
+cat为事件的分类，比如button,banner或image等
+act为事件名，比如"会员购买按钮点击"
 
 
 ### 七. 字段表
