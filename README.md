@@ -74,7 +74,7 @@ act为事件名，由2部分构成，"页面名_组件名",比如"编辑器_升�
 `字段的长度在(2,25]范围内，否则就认为是非法参数。此定义对e_d中的参数同样有效。`
 
 字段名| 解释| 备注 | 是否主动传值
----| --- | --- | ---| ---
+---| --- | --- | ---
 product |  product | 产品英文名字 例如 H5场景PC端站外暂时为0宽度字符串或者tracker_view，站内为h5; 长页面：ls; 互动h5为h5i ; 轻设计为print； 视频为video，易表单为form | y 
 unm |  url name | 页面的名字，比如‘长页面浏览’ | y 
 b_t| business_type| 业务线类型，用来区分数据目录。比如秀推用"xiutui",如果用于多个业务,则用逗号分隔，例如此日志数据用于秀推和打点"xiutui,point"。取值有：def(默认)，point(积分), view(所有场景浏览), consume(购买样例), charge(秀点充值) , app_sr_vip_conv(app搜索推荐会员转化)，buy_svip(超级会员购买成功) 等 | y
@@ -112,14 +112,6 @@ debugMode| 是否为调试数据| "1"表示调试，"0"表示关闭调试模式(
 wx_o_i|weixin open id| | 
 window.scene.ext.yqc.ad|日志中为scene_ext_yqc_ad|广告标识，据此判断是否有广告 | 
 ver|iOS和Android上用到的SDK版本|之前iOS都是1.0.0，Android为空，2019年07月24日规定之后不再上报，改用b_v, 每次发版，这个值都会跟着变化 | 
-
-
-URL中部分参数名解释
-
-参数名| 解释| 示例| 备注 
----| --- | --- | ---
-bd_ptid |  bigdata point task id  | bd_ptid=001 | 积分任务的id 
-bd_ptst |  bigdata point task stay time | bd_ptst=10 | 在打开的页面停留10s后，开始上报积分日志 
 
 
 
